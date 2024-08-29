@@ -3,13 +3,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SimpleCurrencyConverter extends JFrame {
-    private JComboBox<String> currencyOptions;
-    private JTextField amountField;
-    private JLabel resultLabel;
+     JComboBox<String> currencyOptions;
+    JTextField amountField;
+    JLabel resultLabel;
 
     // Exchange rates
-    private static final double USD_TO_INR = 83.72;
-    private static final double INR_TO_USD = 1 / USD_TO_INR;
+     double USD_TO_INR = 83.72;
+     double INR_TO_USD = 1 / USD_TO_INR;
 
     public SimpleCurrencyConverter() {
         setTitle("Currency Converter");

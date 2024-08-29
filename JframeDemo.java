@@ -30,17 +30,31 @@ public class JframeDemo {
 
         JButton calculateBMI = new JButton("calulate BMI ");
         calculateBMI.setBounds(200,150, 130,50);
+        JLabel bmivalueLable =new JLabel();
+        bmivalueLable.setBounds(30,170,250,40);
         jFrame.add(calculateBMI);
 
         calculateBMI.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (userheightTextField.getText().isEmpty()||userweightTextField.getText().isEmpty()){
+                bmivalueLable.setText("Please enter  the weight and height");
+            } else{
             float weight = Float.parseFloat(userweightTextField.getText().toString());
             float height = Float.parseFloat(userheightTextField.getText().toString());
             float bmivalue = weight/(height*height);
+                if (bmivalue<=18.5){
+                  bmivalueLable.setText(" you are under weight");
+                }
+                else if (bmivalue>=18.5&& bmivalue<24.9) {
+                    bmivalueLable.setText("Your weight is Normal");
+                }
+                else {
+                    bmivalueLable.setText(" You are OverWeight");
+                }
 
             calculateBMI.setText(String.valueOf(bmivalue));
-            }
+            }}
         });
 
 
